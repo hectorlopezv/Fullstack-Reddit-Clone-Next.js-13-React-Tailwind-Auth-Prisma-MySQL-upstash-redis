@@ -22,12 +22,10 @@ export const authOptions: AuthOptions = {
   callbacks: {
     async session({ token, session }) {
       if (token) {
-        if (session.user) {
-          session.user.id = token.id;
-          session.user.name = token.name;
-          session.user.email = token.email;
-          session.user.username = token.username;
-        }
+        session.user.id = token.id;
+        session.user.name = token.name;
+        session.user.email = token.email;
+        session.user.username = token.username;
       }
       return session;
     },

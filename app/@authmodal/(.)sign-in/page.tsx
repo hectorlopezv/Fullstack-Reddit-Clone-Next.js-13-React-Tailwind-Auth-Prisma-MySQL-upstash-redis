@@ -1,8 +1,10 @@
 import CloseModal from "@/app/components/CloseModal";
 import SignIn from "@/app/components/SignIn";
-import { FC } from "react";
+import React from "react";
 
-const page: FC = () => {
+type Props = {};
+
+export default function InterceptSignInPage({}: Props) {
   return (
     <div className="fixed inset-0 bg-zinc-900/20 z-10">
       <div className="container flex items-center h-full max-w-lg mx-auto">
@@ -10,12 +12,9 @@ const page: FC = () => {
           <div className="absolute top-4 right-4">
             <CloseModal />
           </div>
-
           <SignIn />
         </div>
       </div>
     </div>
   );
-};
-
-export default page;
+}

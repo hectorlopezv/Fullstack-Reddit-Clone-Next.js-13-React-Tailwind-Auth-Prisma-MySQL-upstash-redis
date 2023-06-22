@@ -16,9 +16,12 @@ type Props = {
 };
 
 export default function UserAccountNav({ user }: Props) {
-  const onSelectHandler = (e: Event) => {
+  const onSelectHandler = async (e: Event) => {
     e.preventDefault();
-    signOut({ callbackUrl: `${window.location.origin}/sign-in` });
+    await signOut({
+      callbackUrl: `${window.location.origin}/sign-in`,
+      redirect: true,
+    });
   };
   return (
     <DropdownMenu>

@@ -1,10 +1,10 @@
+import { Icons } from "@/app/components/Icons";
+import UserAuthForm from "@/app/components/UserAuthForm";
 import Link from "next/link";
-import { Icons } from "./Icons";
-import UserAuthForm from "./UserAuthForm";
 
 type Props = {};
 
-export default function SignIn({}: Props) {
+export default function SignUp({}: Props) {
   return (
     <div
       className="container mx-auto flex w-full flex-col justify-center space-y-6
@@ -12,7 +12,7 @@ export default function SignIn({}: Props) {
     >
       <div className="flex flex-col space-y-2 text-center">
         <Icons.logo className="mx-auto h-6 w-6" />
-        <h1 className="text-2xl font-semibold tracking-tight">Welcome Back</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Sign Up</h1>
         <p className="text-sm max-w-xs mx-auto">
           By Continuing, you are setting up a Homit account and agree to our
           User Agreemnet and Privacy Policy
@@ -20,12 +20,12 @@ export default function SignIn({}: Props) {
         {/* Sign In Form*/}
         <UserAuthForm />
         <p className="px-8 text-center text-sm text-zinc-700">
-          New to Homit{" "}
+          Already a Homit{" "}
           <Link
-            href="/sign-up"
+            href="/sign-in"
             className="hover:text-zinc-800 text-sm underline underline-offset-4"
           >
-            Sign Up
+            Sign In
           </Link>
         </p>
       </div>

@@ -1,9 +1,10 @@
 import "@/app/styles/globals.css";
 import { Inter } from "next/font/google";
 import { cn } from "./lib/utils";
-
+import ReactQueryProvider from "./components/Providers/ReactQueryProvider";
 import { Toaster } from "@/app/components/ui/Toaster";
 import NavBar from "./components/NavBar";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 export const metadata = {
   title: "Homit",
   description:
@@ -27,12 +28,15 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-screen pt-12 bg-slate-50 antialiased">
-        <NavBar />
-        {authmodal}
-        <div className="container max-w-7xl mx-auto h-full pt-12">
-          {children}
-        </div>
-        <Toaster />
+        <ReactQueryProvider>
+          <NavBar />
+          {authmodal}
+          <div className="container max-w-7xl mx-auto h-full pt-12">
+            {children}
+          </div>
+          <Toaster />
+          <ReactQueryDevtools initialIsOpen={false} />
+        </ReactQueryProvider>
       </body>
     </html>
   );

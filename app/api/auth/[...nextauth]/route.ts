@@ -22,7 +22,7 @@ export const authOptions: AuthOptions = {
   callbacks: {
     async session({ token, session }) {
       if (token) {
-        console.log(token, "token");
+
         session.user.id = token.id;
         session.user.image = token.image;
         session.user.name = token.name;

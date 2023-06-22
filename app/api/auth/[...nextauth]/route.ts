@@ -22,14 +22,16 @@ export const authOptions: AuthOptions = {
   callbacks: {
     async session({ token, session }) {
       if (token) {
+        console.log(token, "token");
         session.user.id = token.id;
+        session.user.image = token.image;
         session.user.name = token.name;
         session.user.email = token.email;
         session.user.username = token.username;
       }
       return session;
     },
-    async jwt({ token, user, account }) {
+    async jwt({ token, user, account, session }) {
       const dbUser = await prisma.user.findFirst({
         where: { email: token.email },
       });
@@ -53,6 +55,7 @@ export const authOptions: AuthOptions = {
         name: dbUser.name,
         email: dbUser.email,
         username: dbUser.username,
+        image: dbUser.image,
       };
     },
     redirect() {

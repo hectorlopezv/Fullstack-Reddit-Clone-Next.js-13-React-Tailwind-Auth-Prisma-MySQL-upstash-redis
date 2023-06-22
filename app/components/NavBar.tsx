@@ -3,12 +3,12 @@ import React from "react";
 import { Icons } from "./Icons";
 import { buttonVariants } from "./Button";
 import getSession from "../actions/getSession";
+import UserAccountNav from "./UserAccountNav";
 
 type Props = {};
 
 export default async function NavBar({}: Props) {
   const session = await getSession();
-  console.log("session", session);
   return (
     <div
       className="fixed top-0 inset-x-0 h-fit bg-zinc-100 border-b border-b-zinc-300
@@ -25,7 +25,13 @@ export default async function NavBar({}: Props) {
 
         {/* Search Bar*/}
         {session?.user ? (
-          <p>You're Logged In</p>
+          <UserAccountNav
+            user={{
+              name: session.user.name || "",
+              email: session.user.email || "",
+              image: session.user.image || "",
+            }}
+          />
         ) : (
           <Link href="/sign-in" className={buttonVariants()}>
             Sign In

@@ -58,6 +58,7 @@
     "nanoid": "^4.0.2",
     "next": "13.4.6",
     "next-auth": "^4.22.1",
+    "next-superjson-plugin": "^0.5.8",
     "postcss": "8.4.24",
     "prisma": "^4.16.0",
     "react": "18.2.0",

@@ -15,7 +15,7 @@ export default function MiniCreatePost({ session }: Props) {
   const router = useRouter();
   const pathName = usePathname();
   return (
-    <li className="overflow-hidden rounded-md bg-white shadow">
+    <div className="overflow-hidden py-2 rounded-md bg-white shadow">
       <div className="h-full px-6 py-4 flex justify-between gap-6">
         <div className="relative">
           <UserAvatar
@@ -24,7 +24,7 @@ export default function MiniCreatePost({ session }: Props) {
               image: session?.user?.image || null,
             }}
           />
-          <span className="absolute bottom-0 right-0 rounded-full w-3 h-3 bg-green-500 outline outline-2 outline-white" />
+          <span className="absolute -top-1 right-0 rounded-full w-3 h-3 bg-green-500 outline outline-2 outline-white" />
         </div>
         <Input
           readOnly
@@ -51,6 +51,6 @@ export default function MiniCreatePost({ session }: Props) {
           <Link2 className="text-zinc-600" />
         </Button>
       </div>
-    </li>
+    </div>
   );
 }

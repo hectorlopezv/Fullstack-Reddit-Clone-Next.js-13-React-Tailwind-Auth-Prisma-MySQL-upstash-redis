@@ -46,10 +46,9 @@ function formatDistance(token: string, count: number, options?: any): string {
 }
 
 export function formatTimeToNow(date: Date): string {
-  console.log("date value", date, typeof date, date instanceof Date);
   let response = "";
   try {
-    const dateFormated = formatDistanceToNowStrict(date, {
+    const dateFormated = formatDistanceToNowStrict(new Date(date), {
       addSuffix: true,
       locale: {
         ...locale,

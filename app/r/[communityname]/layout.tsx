@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import { format } from "date-fns";
 import getSession from "@/app/actions/getSession";
 import SubscribeLeaveToogle from "@/app/components/SubscribeLeaveToogle";
+import { buttonVariants } from "@/app/components/Button";
+import Link from "next/link";
+
 export default async function RLayout({
   children,
   params: { communityname },
@@ -91,6 +94,15 @@ export default async function RLayout({
                   isSubscribed={isSubscribed}
                 />
               ) : null}
+              <Link
+                href={`/r/${communityname}/submit`}
+                className={buttonVariants({
+                  variant: "outline",
+                  className: "w-full mb-6",
+                })}
+              >
+                Create Post
+              </Link>
             </dl>
           </div>
         </div>

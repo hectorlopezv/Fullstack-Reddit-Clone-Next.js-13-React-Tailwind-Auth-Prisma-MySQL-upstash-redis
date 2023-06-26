@@ -4,6 +4,7 @@ import { Icons } from "./Icons";
 import { buttonVariants } from "./Button";
 import getSession from "../actions/getSession";
 import UserAccountNav from "./UserAccountNav";
+import SearchBar from "./SearchBar";
 
 type Props = {};
 
@@ -22,8 +23,7 @@ export default async function NavBar({}: Props) {
             Homit
           </p>
         </Link>
-
-        {/* Search Bar*/}
+        <SearchBar />
         {session?.user ? (
           <UserAccountNav
             user={{

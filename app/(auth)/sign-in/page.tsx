@@ -2,7 +2,7 @@ import CloseModal from "@/app/components/CloseModal";
 import SignIn from "@/app/components/SignIn";
 import { FC } from "react";
 
-const page: FC = () => {
+const Page: FC = () => {
   return (
     <div className="fixed inset-0 bg-zinc-900/20 z-10">
       <div className="container flex items-center h-full max-w-lg mx-auto">
@@ -18,4 +18,4 @@ const page: FC = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -1,11 +1,11 @@
 "use client";
 
+import { ImageIcon, Link2 } from "lucide-react";
 import { Session } from "next-auth";
 import { usePathname, useRouter } from "next/navigation";
+import { Button } from "./Button";
 import UserAvatar from "./UserAvatar";
 import { Input } from "./ui/Input";
-import { Button } from "./Button";
-import { ImageIcon, Link2 } from "lucide-react";
 
 type Props = {
   session: Session | null;

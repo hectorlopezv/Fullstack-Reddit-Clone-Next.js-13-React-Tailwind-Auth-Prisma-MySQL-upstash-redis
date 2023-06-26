@@ -6,7 +6,7 @@ import CustomFeed from "./components/CustomFeed";
 import GeneralFeed from "./components/GeneralFeed";
 export const dynamic = "force-dynamic";
 export const fetchCache = "force-cache";
-export default async function Home() {
+export default async function Page() {
   const session = await getSession();
 
   return (

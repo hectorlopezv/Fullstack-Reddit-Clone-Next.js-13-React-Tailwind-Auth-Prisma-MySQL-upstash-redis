@@ -8,6 +8,8 @@ import { Suspense } from "react";
 import PostVoteShell from "@/app/components/PostVoteShell";
 import { formatTimeToNow } from "@/app/lib/utils";
 import EditorOutput from "@/app/components/EditorOutput";
+import { Loader2 } from "lucide-react";
+import CommentSection from "@/app/components/CommentSection";
 type PostWithVotesAndAuthor = Post & { votes: Vote[]; author: User };
 type Props = {
   params: {
@@ -63,7 +65,13 @@ export default async function Page({ params: { postId } }: Props) {
           </h1>
           <EditorOutput content={post?.content ?? cachedPost.content} />
 
-          <Suspense fallback={<div>Loading...</div>}></Suspense>
+          <Suspense
+            fallback={
+              <Loader2 className="h-5 w-5 animate-spin text-zinc-500" />
+            }
+          >
+            <CommentSection postId={post?.id ?? cachedPost.id} />
+          </Suspense>
         </div>
       </div>
     </div>

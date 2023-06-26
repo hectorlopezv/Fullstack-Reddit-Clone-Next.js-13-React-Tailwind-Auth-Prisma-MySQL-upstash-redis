@@ -4,7 +4,8 @@ import { buttonVariants } from "./components/Button";
 import getSession from "./actions/getSession";
 import CustomFeed from "./components/CustomFeed";
 import GeneralFeed from "./components/GeneralFeed";
-
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-cache";
 export default async function Home() {
   const session = await getSession();
 

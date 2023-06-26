@@ -12,7 +12,7 @@ import { useToast } from "@/app/hooks/use-toast";
 import useCustomToast from "@/app/hooks/use-custom-toast";
 type Props = {};
 
-export default function page({}: Props) {
+export default function Page({}: Props) {
   const [input, setInput] = useState("");
   const router = useRouter();
   const { toast } = useToast();

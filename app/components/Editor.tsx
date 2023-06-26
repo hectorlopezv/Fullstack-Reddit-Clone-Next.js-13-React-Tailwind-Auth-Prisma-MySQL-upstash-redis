@@ -49,14 +49,14 @@ export default function Editor({ subredditId }: Props) {
       const { data } = await axios.post("/api/subreddit/post/create", payload);
       return data;
     },
-    onError(error, variables, context) {
+    onError() {
       return toast({
         title: "Something went wrong",
         description: "Your post was not created, please try again later",
         variant: "destructive",
       });
     },
-    onSuccess(data, variables, context) {
+    onSuccess() {
       const newPathName = pathName.split("/").slice(0, -1).join("/");
       router.push(newPathName);
       router.refresh();
